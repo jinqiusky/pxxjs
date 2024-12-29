@@ -30,23 +30,14 @@
 
 <body>
 
-  <header>
+    <header>
     <div class="container">
       <h1 id="title">{{ site.name }}<sup>{{ site.version }}</sup></h1>
       <h2>{{ site.description }}</h2>
 
-      <section id="downloads">
-        {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">下载为 .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">下载为 .tar.gz</a> {% endif %}
-        <a href="{{ site.github.repository_url }}" target="_blank" class="btn btn-github">
-          <span class="icon"></span>
-          在 GitHub 上查看
-        </a>
-      </section>
     </div>
   </header>
-
+  
   <div class="container">
     <section id="main_content">
       <div class="tabs">
@@ -57,14 +48,14 @@
       <div class="cf"></div>
       <div class="tabs-contents">
         <div class="tab-content show" id="contentString">
-          <textarea id="input" class="content" rows="7" placeholder="在这里粘贴代码..."></textarea>
+          <textarea id="input" class="content" rows="7" placeholder="这里 粘贴代码..."></textarea>
         </div>
         <div class="tab-content" id="contentLocal">
           <div class="box">
             <input type="file" name="file" id="file" class="inputfile" accept="text/javascript,text/plain">
             <label for="file" class="read-only">
               <span id="fileName"></span>
-              <strong>选择一个文件…</strong>
+              <strong>上传文件…</strong>
             </label>
           </div>
           <pre id="renderLocal" class="render read-only"></pre>
@@ -74,7 +65,7 @@
             <input type="url" placeholder="请输入网址" id="urlRemove" required>
             <button type="submit" class="btn" id="submitRemove">提交</button>
           </form>
-          <small>链接请求 Access-Control-Allow-Origin 部分</small>
+          <small>链接请求 Access-Control-Allow-Origin 响应头</small>
           <pre id="renderRemove" class="render read-only"></pre>
         </div>
       </div>
@@ -83,14 +74,14 @@
         <form name="pxxjs">
           <div class="methods-wrap">
             <input id="none" class="magic-radio" type="radio" value="" name="encode" checked>
-            <label for="none">无</label>
+            <label for="none">无(NIL)</label>
             {% for opt in site.data.methods %}
             <input id="{{ opt.key }}" class="magic-radio pxxjs-method" type="radio" value="{{ opt.key }}" name="encode">
             <label for="{{ opt.key }}">{{ opt.name }}</label>
             {% endfor %}
             <input id="nicify" class="magic-radio" type="radio" value="nicify" name="encode" disabled>
             <label for="nicify">
-              <a href="https://github.com/pxx917144686/pxxjs/blob/master/README.md#helper" target="_blank"
+              <a href="https://www.tampermonkey.net/script_installation.php#url=https://github.com/pxx917144686/pxxjs/raw/refs/heads/main/userscript/pxxjs_helper.user.js" target="_blank"
                 class="help">代码混淆功能</a>
             </label>
           </div>
@@ -106,10 +97,10 @@
 
       <div class="center">
         <button id="clear" class="btn" type="reset">
-          清空
+          清空 内容
         </button>
         <button id="auto" class="btn" type="button">
-          自动解码
+          点击 解码
         </button>
       </div>
 
@@ -134,17 +125,16 @@
 
     <footer id="footer">
       <section class="sponsors">
-        <h3>依赖</h3>
-        <p>依赖网址 <a href="https://sansec.io/" target="_blank"
-            rel="noopener noreferrer">Sansec</a>.</p>
+        <h3>技术依赖</h3>
+        <p>关于依赖 <a href="https://pages.github.com/versions/" target="_blank"
+            rel="noopener noreferrer">pxx</a>js</p>
       </section>
       <section class="credits">
         <h3>介绍</h3>
-        <p>项目由 <a href="https://github.com/pxx917144686/pxxjs" title="pxx917144686">pxx917144686</a> 更新
-          <br>托管于 GitHub Pages
+        <p>项目由 <a href="https://github.com/pxx917144686/js" title="pxx917144686">pxx917144686</a> 更新
         </p>
-        <p>图标由 <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
-            title="Eucalyp">Eucalyp</a> 提供</p>
+        <p>logo图标在 <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
+            title="Eucalyp">Eucalyp</a> 获取</p>
       </section>
     </footer>
   </div>
@@ -171,7 +161,7 @@
           )
         );
 
-        if (confirm('已下载新版本！立即启动吗？')) {
+        if (confirm('新版本！下载吗？')) {
           location.reload(true);
         }
       });
