@@ -97,18 +97,23 @@ code {
   }
 }
 
-/* 为“点击 解码”按钮添加闪烁效果 */
-#auto.blinking {
-  animation: blink-pink 0.5s steps(1) infinite;
-  background-color: pink !important;
-  color: #fff !important; /* 可根据需要调整文字颜色 */
+/* 更新闪烁动画，仅改变字体颜色为粉红色 */
+@keyframes blink-pink {
+  0% {
+    color: #fff;  /* 默认字体颜色 */
+  }
+  50% {
+    color: #ff69b4;  /* 50%时字体为粉红色 */
+  }
+  100% {
+    color: #fff;  /* 最后恢复字体颜色 */
+  }
 }
 
-/* 为“点击 解码”按钮添加闪烁效果 */
+/* 为点击解码按钮添加闪烁效果，字体闪烁为粉红色 */
 #auto.blinking {
-  animation: blink-pink 0.5s steps(1) infinite;
-  background-color: pink !important;
-  color: #fff !important; /* 可根据需要调整文字颜色 */
+  animation: blink-pink 0.5s steps(1) infinite; /* 设置字体闪烁动画 */
+  color: #ff69b4 !important;  /* 强制字体颜色为粉红色 */
 }
 
 #view {
