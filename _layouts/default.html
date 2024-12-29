@@ -170,6 +170,27 @@
     }
   </script>
   {% endif %}
+
+  <!-- 添加闪烁动画的JavaScript代码 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const decodeButton = document.getElementById('auto');
+
+      decodeButton.addEventListener('click', () => {
+        // 添加闪烁类
+        decodeButton.classList.add('blinking');
+
+        // 禁用按钮防止重复点击
+        decodeButton.disabled = true;
+
+        // 在3秒后移除闪烁类并重新启用按钮
+        setTimeout(() => {
+          decodeButton.classList.remove('blinking');
+          decodeButton.disabled = false;
+        }, 3000); // 3000毫秒 = 3秒
+      });
+    });
+  </script>
 </body>
 
 </html>
