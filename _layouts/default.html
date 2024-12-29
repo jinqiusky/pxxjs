@@ -2,7 +2,7 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
 
 <head>
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="BbaaM88Az_X9Kkutg_1d0lgK5u9URFdntKd8lB41hLs">
@@ -23,7 +23,6 @@
     gtag('js', new Date());
 
     gtag('config', '{{ site.google_analytics }}');
-
   </script>
   {% endif %}
 </head>
@@ -37,11 +36,11 @@
 
       <section id="downloads">
         {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">下载为 .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">下载为 .tar.gz</a> {% endif %}
+        <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a> {% endif %}
         <a href="{{ site.github.repository_url }}" target="_blank" class="btn btn-github">
           <span class="icon"></span>
-          在 GitHub 上查看
+          View on GitHub
         </a>
       </section>
     </div>
@@ -50,53 +49,53 @@
   <div class="container">
     <section id="main_content">
       <div class="tabs">
-        <div class="tab active" data-target="String">粘贴代码</div>
-        <div class="tab" data-target="Local">本地文件</div>
-        <div class="tab" data-target="Remote">远程文件</div>
+        <div class="tab active" data-target="String">String</div>
+        <div class="tab" data-target="Local">Local File</div>
+        <div class="tab" data-target="Remote">Remote File</div>
       </div>
       <div class="cf"></div>
       <div class="tabs-contents">
         <div class="tab-content show" id="contentString">
-          <textarea id="input" class="content" rows="7" placeholder="在这里粘贴代码..."></textarea>
+          <textarea id="input" class="content" rows="7" placeholder="Paste code here..."></textarea>
         </div>
         <div class="tab-content" id="contentLocal">
           <div class="box">
             <input type="file" name="file" id="file" class="inputfile" accept="text/javascript,text/plain">
             <label for="file" class="read-only">
               <span id="fileName"></span>
-              <strong>选择一个文件…</strong>
+              <strong>Choose a file…</strong>
             </label>
           </div>
           <pre id="renderLocal" class="render read-only"></pre>
         </div>
         <div class="tab-content" id="contentRemote">
           <form class="form-wrapper cf" id="formRemove">
-            <input type="url" placeholder="请输入网址" id="urlRemove" required>
-            <button type="submit" class="btn" id="submitRemove">提交</button>
+            <input type="url" placeholder="Enter a URL" id="urlRemove" required>
+            <button type="submit" class="btn" id="submitRemove">Submit</button>
           </form>
-          <small>链接请求 Access-Control-Allow-Origin 部分</small>
+          <small>Cross-origin requests require Access-Control-Allow-Origin header</small>
           <pre id="renderRemove" class="render read-only"></pre>
         </div>
       </div>
 
       <div class="config tab-content show">
-        <form name="pxxjs">
+        <form name="de4js">
           <div class="methods-wrap">
             <input id="none" class="magic-radio" type="radio" value="" name="encode" checked>
-            <label for="none">无</label>
+            <label for="none">None</label>
             {% for opt in site.data.methods %}
-            <input id="{{ opt.key }}" class="magic-radio pxxjs-method" type="radio" value="{{ opt.key }}" name="encode">
+            <input id="{{ opt.key }}" class="magic-radio de4js-method" type="radio" value="{{ opt.key }}" name="encode">
             <label for="{{ opt.key }}">{{ opt.name }}</label>
             {% endfor %}
             <input id="nicify" class="magic-radio" type="radio" value="nicify" name="encode" disabled>
             <label for="nicify">
-              <a href="https://github.com/pxx917144686/pxxjs/blob/master/README.md#helper" target="_blank"
-                class="help">代码混淆功能</a>
+              <a href="https://github.com/lelinhtinh/de4js/blob/master/README.md#helper" target="_blank"
+                class="help">Unreadable</a>
             </label>
           </div>
           <div class="options-wrap">
             {% for opt in site.data.options %}
-            <input id="{{ opt.key }}" class="magic-checkbox pxxjs-option" type="checkbox" value="yes"
+            <input id="{{ opt.key }}" class="magic-checkbox de4js-option" type="checkbox" value="yes"
               name="{{ opt.key }}" {% if opt.checked %} checked {% endif %}>
             <label for="{{ opt.key }}">{{ opt.name }}</label>
             {% endfor %}
@@ -106,10 +105,10 @@
 
       <div class="center">
         <button id="clear" class="btn" type="reset">
-          清空
+          Clear
         </button>
         <button id="auto" class="btn" type="button">
-          自动解码
+          Auto Decode
         </button>
       </div>
 
@@ -117,14 +116,14 @@
         <div class="view-control">
           <button id="copyjs" class="btn" type="button">
             <img class="btn-icon" src="{{ 'assets/images/buttons/copy-document.png' | relative_url }}"
-              alt="复制到剪贴板">
+              alt="Copy to clipboard">
           </button>
           <a id="download" class="btn" type="button" href="#" download="result.js">
-            <img class="btn-icon" src="{{ 'assets/images/buttons/download.png' | relative_url }}" alt="下载文件">
+            <img class="btn-icon" src="{{ 'assets/images/buttons/download.png' | relative_url }}" alt="Download file">
           </a>
           <a id="preview" class="btn" type="button" href="#">
             <img class="btn-icon" src="{{ 'assets/images/buttons/external-link-symbol.png' | relative_url }}"
-              alt="在新标签页中打开">
+              alt="Open in new tab">
           </a>
         </div>
         <textarea id="readable"></textarea>
@@ -134,17 +133,17 @@
 
     <footer id="footer">
       <section class="sponsors">
-        <h3>依赖</h3>
-        <p>依赖网址 <a href="https://sansec.io/" target="_blank"
+        <h3>Sponsors</h3>
+        <p>Secure stores, happy shoppers. We are <a href="https://sansec.io/" target="_blank"
             rel="noopener noreferrer">Sansec</a>.</p>
       </section>
       <section class="credits">
-        <h3>介绍</h3>
-        <p>项目由 <a href="https://github.com/pxx917144686/pxxjs" title="pxx917144686">pxx917144686</a> 更新
-          <br>托管于 GitHub Pages
+        <h3>Credits</h3>
+        <p>Project maintained by <a href="https://github.com/lelinhtinh" title="lelinhtinh">lelinhtinh</a>
+          <br>Hosted on GitHub Pages
         </p>
-        <p>图标由 <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
-            title="Eucalyp">Eucalyp</a> 提供</p>
+        <p>Icons made by <a target="_blank" href="https://www.flaticon.com/free-icon/artificial-intelligence_653469"
+            title="Eucalyp">Eucalyp</a></p>
       </section>
     </footer>
   </div>
@@ -171,7 +170,7 @@
           )
         );
 
-        if (confirm('已下载新版本！立即启动吗？')) {
+        if (confirm('A new version is downloaded. Launch it?')) {
           location.reload(true);
         }
       });
