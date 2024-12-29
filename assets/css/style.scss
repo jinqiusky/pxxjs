@@ -1,3 +1,5 @@
+---
+---
 $base-color: #eaeaea;
 $primary-color: #b5e853;
 $disabled-color: #ff2323;
@@ -10,7 +12,7 @@ $special-disabled-color: #000000;
 {% include highlight-js/styles/hljs-theme.css %}
 {% include highlight-js/styles/hljs-line-numbers.css %}
 .hljs {
-  background: #030303;
+	background: #030303;
 }
 @import "magic-check/sass/magic-check.scss";
 
@@ -92,13 +94,6 @@ code {
     background: #141414;
     border-color: #1b1b1b;
     color: #525252;
-  }
-
-  /* 为“解码”按钮添加样式 */
-  &.decode-btn {
-    background-color: pink;
-    /* 应用闪烁动画 */
-    animation: blink-pink 0.5s step-start 6;
   }
 }
 
@@ -185,12 +180,6 @@ sup {
   to {
     border-color: $special-primary-color;
   }
-}
-
-/* 定义粉红色闪烁动画 */
-@keyframes blink-pink {
-  0%, 100% { background-color: pink; }
-  50% { background-color: rgba(0, 0, 0, 0.9); /* 原始背景颜色 */ }
 }
 
 pre {
