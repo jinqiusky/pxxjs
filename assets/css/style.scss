@@ -97,6 +97,13 @@ code {
   }
 }
 
+/* 为“点击 解码”按钮添加闪烁效果 */
+#auto.blinking {
+  animation: blink-pink 0.5s steps(1) infinite;
+  background-color: pink !important;
+  color: #fff !important; /* 可根据需要调整文字颜色 */
+}
+
 #view {
   transition: opacity ease-in-out 0.2s;
 
@@ -180,6 +187,12 @@ sup {
   to {
     border-color: $special-primary-color;
   }
+}
+
+/* 新增：粉红色闪烁动画 */
+@keyframes blink-pink {
+  0%, 100% { background-color: pink; }
+  50% { background-color: rgba(0, 0, 0, 0.9); /* 原始背景颜色，可根据需要调整 */ }
 }
 
 pre {
@@ -447,4 +460,17 @@ small {
     float: right;
     text-align: right;
   }
+}
+
+/* 新增：粉红色闪烁动画 */
+@keyframes blink-pink {
+  0%, 100% { background-color: pink; }
+  50% { background-color: rgba(0, 0, 0, 0.9); /* 原始背景颜色，可根据需要调整 */ }
+}
+
+/* 为“点击 解码”按钮添加闪烁效果 */
+#auto.blinking {
+  animation: blink-pink 0.5s steps(1) infinite;
+  background-color: pink !important;
+  color: #fff !important; /* 可根据需要调整文字颜色 */
 }
