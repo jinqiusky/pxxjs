@@ -104,12 +104,12 @@ code {
     opacity: 0.3;
 
     &:empty:before {
-      content: '请稍等...';
+      content: 'Please wait...';
     }
   }
 
   &:empty:before {
-    content: '这里 显示结果 ...';
+    content: 'Please choose a right encoding type!';
   }
 }
 
@@ -342,7 +342,7 @@ pre {
   border: 2px solid #eee;
 
   &:after {
-    content: '将文件拖放到此处';
+    content: 'Drop file here';
     color: #eee;
   }
 
